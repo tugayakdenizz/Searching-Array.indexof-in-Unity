@@ -9,10 +9,10 @@ public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Instance = null;
 
-    public TextMeshProUGUI QuestionText;
-    public string[] QuestionsArray;
-    public string[] AnswerArray;
-    int RandomNo;
+    public TextMeshProUGUI questionText;
+    public string[] questionsArray;
+    public string[] answerArray;
+    int randomNo;
 
     private void Awake()
     {
@@ -25,8 +25,8 @@ public class QuestionManager : MonoBehaviour
 
     public void Questions()
     {
-        RandomNo = UnityEngine.Random.Range(0, QuestionsArray.Length);
-        QuestionText.text = QuestionsArray[RandomNo].ToString();
+        randomNo = UnityEngine.Random.Range(0, questionsArray.Length);
+        questionText.text = questionsArray[randomNo].ToString();
         
 
     }
@@ -34,8 +34,8 @@ public class QuestionManager : MonoBehaviour
     {
         Input = Input.ToLower();
         Input = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Input);
-        int indexNo = Array.IndexOf(QuestionsArray, Input);
-        if (indexNo==RandomNo)
+        int indexNo = Array.IndexOf(questionsArray, Input);
+        if (indexNo==randomNo)
         {
             Debug.Log("OK");
         }
