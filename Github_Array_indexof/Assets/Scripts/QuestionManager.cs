@@ -26,7 +26,7 @@ public class QuestionManager : MonoBehaviour
     public void Questions()
     {
         RandomNo = UnityEngine.Random.Range(0, QuestionsArray.Length);
-        questionText.text = QuestionsArray[RandomNo].ToString();
+        QuestionText.text = QuestionsArray[RandomNo].ToString();
         
 
     }
