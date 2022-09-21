@@ -9,7 +9,7 @@ public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Instance = null;
 
-    public TextMeshProUGUI questionText;
+    public TextMeshProUGUI QuestionText;
     public string[] QuestionsArray;
     public string[] AnswerArray;
     int RandomNo;
