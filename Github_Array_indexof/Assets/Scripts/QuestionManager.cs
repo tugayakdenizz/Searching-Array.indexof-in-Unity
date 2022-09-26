@@ -1,16 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
 using System.Globalization;
+using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Instance = null;
 
+    
     public TextMeshProUGUI questionText;
     public string[] questionsArray;
     public string[] answerArray;
     int randomNo;
+    
 
     private void Awake()
     {
@@ -28,18 +33,22 @@ public class QuestionManager : MonoBehaviour
         
 
     }
-    public void Answers(string Input)
+    public void Answers(string answerInput)
     {
-        Input = Input.ToLower();
-        Input = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Input);
-        int indexNo = Array.IndexOf(questionsArray, Input);
+        answerInput = answerInput.ToLower();
+        answerInput = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(answerInput);
+        
+        Debug.Log(answerInput);
+
+        int indexNo = Array.IndexOf(answerArray, answerInput);
         if (indexNo==randomNo)
         {
-            Debug.Log("OK");
+            Debug.Log("OK" + randomNo + indexNo);
+
         }
         else
         {
-            Debug.Log("Nok");   
+            Debug.Log("Nok" + randomNo + indexNo);   
         }
     }
 
