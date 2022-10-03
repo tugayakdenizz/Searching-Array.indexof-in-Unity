@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 using TMPro;
 using System.Globalization;
-using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -35,12 +34,12 @@ public class QuestionManager : MonoBehaviour
     }
     public void Answers(string answerInput)
     {
-        answerInput = answerInput.ToLower();
-        answerInput = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(answerInput);
+       // answerInput = answerInput.ToLower();
+       // answerInput = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(answerInput);
         
         Debug.Log(answerInput);
 
-        int indexNo = Array.IndexOf(answerArray, answerInput);
+        int indexNo = Array.IndexOf(questionsArray, answerInput);
         if (indexNo==randomNo)
         {
             Debug.Log("OK" + randomNo + indexNo);
@@ -48,7 +47,7 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Nok" + randomNo + indexNo);   
+            Debug.Log("Nok" + randomNo + "-" + indexNo);   
         }
     }
 
